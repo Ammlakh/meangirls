@@ -13,6 +13,9 @@ add_commentary(person, number)
 }
 \value{
 A string (possibly blank)
+
+
+#' @export
 }
 \description{
 Tacks commentary on to candygram announcement
