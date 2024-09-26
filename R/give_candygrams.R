@@ -10,30 +10,16 @@
 #' @importFrom english as.english
 #'
 #' @export
-give_candygrams <- function(person, number,
-                            extra_message = NULL) {
-
+give_candygrams <- function(person, number, extra_message = NULL) {
   stopifnot(number > 0)
-
-  if (str_detect(person, "Gretchen")) {
-
+  if (str_detect(person, "Joe")) {
     return(cat("None for Gretchen Weiners."))
-
   }
-
   if (is.null(extra_message)) {
-
     extra_message <- add_commentary(person, number)
-
   }
-
   number <- str_to_title(as.english(number))
-
-
   glue::glue("{number} for {person}.")
-
-
-
 }
 
 #' Tacks commentary on to candygram announcement
@@ -42,22 +28,15 @@ give_candygrams <- function(person, number,
 #' @param number How many grams they got
 #'
 #' @return A string (possibly blank)
+#'
+#'
+#' #' @export
 add_commentary <- function(person, number) {
-
   if (stringr::str_detect(person, "Aaron")) {
-
     return("They are from Regina.")
-
   }
-
-
   if (number > 3) {
-
     return(glue::glue("You go, {person}!"))
-
   }
-
-
   return("")
-
 }
